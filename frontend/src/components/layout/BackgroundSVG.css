@@ -1,0 +1,530 @@
+.background-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  background: linear-gradient(to bottom, #f1f9fe, #ffffff);
+}
+
+.background-svg {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40%;
+}
+
+/* Animação das ondas */
+.wave {
+  animation-name: wave-animation;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.wave1 {
+  animation-duration: 20s;
+}
+
+.wave2 {
+  animation-duration: 15s;
+  animation-delay: 1s;
+}
+
+.wave3 {
+  animation-duration: 25s;
+  animation-delay: 2s;
+}
+
+@keyframes wave-animation {
+  0% {
+    transform: translateX(-50px);
+  }
+  100% {
+    transform: translateX(50px);
+  }
+}
+
+/* Elementos flutuantes */
+.floating-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.floating-element {
+  position: absolute;
+  opacity: 0.5; /* Aumentando a opacidade para tornar mais nítido */
+  filter: drop-shadow(0 0 5px rgba(0,0,0,0.1)); /* Adicionando sombra para destaque */
+  animation-name: float-animation;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes float-animation {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(20px) rotate(5deg);
+  }
+}
+
+/* Posicionamento e animação específicos para cada elemento */
+.caduceus {
+  top: 15%;
+  left: 10%;
+  animation-duration: 12s;
+}
+
+.heart {
+  top: 25%;
+  right: 15%;
+  animation-duration: 8s;
+  animation-name: pulse-animation;
+}
+
+@keyframes pulse-animation {
+  0% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+    filter: drop-shadow(0 0 10px rgba(233,30,99,0.4));
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+}
+
+.cross {
+  bottom: 50%;
+  left: 20%;
+  animation-duration: 15s;
+  animation-delay: 2s;
+}
+
+.stethoscope {
+  top: 20%;
+  right: 25%;
+  animation-duration: 17s;
+  animation-delay: 1s;
+}
+
+.pill {
+  bottom: 35%;
+  right: 10%;
+  animation-duration: 13s;
+  animation-name: rotate-animation;
+}
+
+@keyframes rotate-animation {
+  0% {
+    transform: rotate(0deg);
+    opacity: 0.4;
+  }
+  50% {
+    transform: rotate(180deg);
+    opacity: 0.7;
+  }
+  100% {
+    transform: rotate(360deg);
+    opacity: 0.4;
+  }
+}
+
+.dna {
+  top: 15%;
+  left: 25%;
+  animation-duration: 20s;
+  animation-delay: 3s;
+  animation-name: dna-animation;
+}
+
+@keyframes dna-animation {
+  0% {
+    transform: translateY(0) rotateY(0deg);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translateY(15px) rotateY(180deg);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(0) rotateY(360deg);
+    opacity: 0.4;
+  }
+}
+
+.monitor {
+  bottom: 30%;
+  left: 40%;
+  animation-duration: 10s;
+  animation-name: monitor-animation;
+}
+
+@keyframes monitor-animation {
+  0% {
+    transform: scaleX(1);
+    opacity: 0.4;
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    transform: scaleX(1.2);
+    opacity: 0.7;
+    filter: hue-rotate(30deg) drop-shadow(0 0 5px rgba(103,58,183,0.4));
+  }
+  100% {
+    transform: scaleX(1);
+    opacity: 0.4;
+    filter: hue-rotate(0deg);
+  }
+}
+
+/* Novos elementos posicionamento */
+.microscope {
+  top: 40%;
+  left: 8%;
+  animation-duration: 16s;
+  animation-name: microscope-animation;
+}
+
+@keyframes microscope-animation {
+  0% {
+    transform: scale(1) rotate(-5deg);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scale(1.15) rotate(5deg);
+    opacity: 0.6;
+    filter: drop-shadow(0 0 8px rgba(0,150,136,0.4));
+  }
+  100% {
+    transform: scale(1) rotate(-5deg);
+    opacity: 0.4;
+  }
+}
+
+.cell {
+  top: 65%;
+  right: 30%;
+  animation-duration: 18s;
+  animation-name: cell-animation;
+}
+
+@keyframes cell-animation {
+  0% {
+    transform: scale(0.9) rotate(0deg);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.2) rotate(180deg);
+    opacity: 0.6;
+    filter: drop-shadow(0 0 10px rgba(244,67,54,0.4));
+  }
+  100% {
+    transform: scale(0.9) rotate(360deg);
+    opacity: 0.3;
+  }
+}
+
+.hospital {
+  top: 10%;
+  right: 5%;
+  animation-duration: 22s;
+  animation-delay: 2s;
+}
+
+.syringe {
+  top: 70%;
+  left: 15%;
+  animation-duration: 14s;
+  animation-name: syringe-animation;
+}
+
+@keyframes syringe-animation {
+  0% {
+    transform: translateY(0) rotate(40deg);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translateY(10px) rotate(50deg);
+    opacity: 0.7;
+    filter: drop-shadow(0 0 8px rgba(251,140,0,0.5));
+  }
+  100% {
+    transform: translateY(0) rotate(40deg);
+    opacity: 0.4;
+  }
+}
+
+.molecule {
+  bottom: 20%;
+  right: 20%;
+  animation-duration: 25s;
+  animation-name: molecule-animation;
+}
+
+@keyframes molecule-animation {
+  0% {
+    transform: rotate(0deg) scale(0.9);
+    opacity: 0.3;
+  }
+  33% {
+    transform: rotate(120deg) scale(1.1);
+    opacity: 0.6;
+  }
+  66% {
+    transform: rotate(240deg) scale(1.0);
+    opacity: 0.5;
+    filter: drop-shadow(0 0 10px rgba(156,39,176,0.4));
+  }
+  100% {
+    transform: rotate(360deg) scale(0.9);
+    opacity: 0.3;
+  }
+}
+
+.mask {
+  bottom: 15%;
+  left: 30%;
+  animation-duration: 17s;
+}
+
+/* Partículas flutuantes - pequenos círculos que se movem no fundo */
+.particles {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.particle {
+  position: absolute;
+  background: radial-gradient(circle, rgba(3,169,244,0.7) 0%, rgba(3,169,244,0) 70%);
+  border-radius: 50%;
+  animation: particle-float 20s infinite linear;
+  opacity: 0.4;
+}
+
+.particle1 {
+  width: 30px;
+  height: 30px;
+  top: 20%;
+  left: 30%;
+  animation-duration: 30s;
+  animation-delay: 0s;
+}
+
+.particle2 {
+  width: 15px;
+  height: 15px;
+  top: 40%;
+  left: 70%;
+  animation-duration: 25s;
+  animation-delay: 2s;
+  background: radial-gradient(circle, rgba(156,39,176,0.6) 0%, rgba(156,39,176,0) 70%);
+}
+
+.particle3 {
+  width: 20px;
+  height: 20px;
+  top: 70%;
+  left: 20%;
+  animation-duration: 35s;
+  animation-delay: 5s;
+  background: radial-gradient(circle, rgba(0,150,136,0.6) 0%, rgba(0,150,136,0) 70%);
+}
+
+.particle4 {
+  width: 25px;
+  height: 25px;
+  top: 30%;
+  left: 50%;
+  animation-duration: 40s;
+  animation-delay: 3s;
+  background: radial-gradient(circle, rgba(233,30,99,0.6) 0%, rgba(233,30,99,0) 70%);
+}
+
+.particle5 {
+  width: 18px;
+  height: 18px;
+  top: 60%;
+  left: 40%;
+  animation-duration: 28s;
+  animation-delay: 7s;
+  background: radial-gradient(circle, rgba(76,175,80,0.6) 0%, rgba(76,175,80,0) 70%);
+}
+
+.particle6 {
+  width: 22px;
+  height: 22px;
+  top: 50%;
+  left: 85%;
+  animation-duration: 32s;
+  animation-delay: 9s;
+}
+
+.particle7 {
+  width: 13px;
+  height: 13px;
+  top: 10%;
+  left: 65%;
+  animation-duration: 38s;
+  animation-delay: 1s;
+  background: radial-gradient(circle, rgba(255,152,0,0.6) 0%, rgba(255,152,0,0) 70%);
+}
+
+.particle8 {
+  width: 16px;
+  height: 16px;
+  top: 80%;
+  left: 55%;
+  animation-duration: 36s;
+  animation-delay: 6s;
+  background: radial-gradient(circle, rgba(33,150,243,0.6) 0%, rgba(33,150,243,0) 70%);
+}
+
+.particle9 {
+  width: 14px;
+  height: 14px;
+  top: 25%;
+  left: 80%;
+  animation-duration: 42s;
+  animation-delay: 4s;
+}
+
+.particle10 {
+  width: 28px;
+  height: 28px;
+  top: 85%;
+  left: 15%;
+  animation-duration: 45s;
+  animation-delay: 8s;
+  background: radial-gradient(circle, rgba(121,85,72,0.6) 0%, rgba(121,85,72,0) 70%);
+}
+
+.particle11 {
+  width: 12px;
+  height: 12px;
+  top: 35%;
+  left: 5%;
+  animation-duration: 33s;
+  animation-delay: 10s;
+  background: radial-gradient(circle, rgba(63,81,181,0.6) 0%, rgba(63,81,181,0) 70%);
+}
+
+.particle12 {
+  width: 24px;
+  height: 24px;
+  top: 15%;
+  left: 45%;
+  animation-duration: 37s;
+  animation-delay: 2.5s;
+  background: radial-gradient(circle, rgba(103,58,183,0.6) 0%, rgba(103,58,183,0) 70%);
+}
+
+@keyframes particle-float {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(50px, 25px) scale(1.1);
+  }
+  50% {
+    transform: translate(0, 50px) scale(0.9);
+  }
+  75% {
+    transform: translate(-50px, 25px) scale(1.1);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+/* Sistema de Pulsos - Simula batimentos cardíacos */
+.pulse-system {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.pulse-ring {
+  position: absolute;
+  border: 2px solid rgba(233,30,99,0.4);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  animation: pulse-ring-animation 5s infinite;
+  opacity: 0;
+}
+
+.pulse1 {
+  bottom: 40%;
+  right: 20%;
+  animation-delay: 0s;
+}
+
+.pulse2 {
+  top: 30%;
+  left: 60%;
+  animation-delay: 1.5s;
+}
+
+.pulse3 {
+  top: 60%;
+  left: 30%;
+  animation-delay: 3s;
+}
+
+@keyframes pulse-ring-animation {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(3);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+}
+
+/* Ajuste para telas menores */
+@media (max-width: 768px) {
+  .background-svg {
+    height: 30%;
+  }
+  
+  .floating-element {
+    transform: scale(0.7);
+  }
+  
+  .floating-elements {
+    opacity: 0.8;
+  }
+  
+  .pulse-ring {
+    display: none;
+  }
+  
+  .particle {
+    opacity: 0.3;
+  }
+}

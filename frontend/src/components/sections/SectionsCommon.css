@@ -1,0 +1,142 @@
+.section-container {
+  padding: 4rem 1rem;
+}
+
+.section-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  color: #555;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Estilos para cards de avanços médicos */
+.advance-card {
+  transition: all 0.3s ease;
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.advance-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.icon-container {
+  width: 80px;
+  height: 80px;
+  background-color: #0077b6;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.section-icon {
+  color: white;
+}
+
+/* Estilos para cards de IA */
+.ai-card {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.ai-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* Cards de estatísticas */
+.stat-card {
+  background-color: #0077b6;
+  color: white;
+  border-radius: 10px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 119, 182, 0.3);
+}
+
+.stat-card h3 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.stat-card p {
+  font-size: 1.1rem;
+  margin-bottom: 0;
+}
+
+/* Estilos para a timeline */
+.timeline-card {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.timeline-card:hover {
+  transform: translateY(-5px);
+}
+
+.timeline-card .year {
+  display: inline-block;
+  background-color: #0077b6;
+  color: white;
+  padding: 0.3rem 1rem;
+  border-radius: 30px;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.timeline-card.future .year {
+  background-color: #6a1b9a;
+}
+
+/* Lista com marcadores de check */
+.check-list {
+  padding-left: 1.2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  list-style-type: none;
+}
+
+.check-list li {
+  padding-left: 1.5rem;
+  position: relative;
+  margin-bottom: 0.75rem;
+}
+
+.check-list li:before {
+  content: "\2713";
+  position: absolute;
+  left: 0;
+  color: #0077b6;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1rem;
+  }
+  
+  .stat-card h3 {
+    font-size: 2.5rem;
+  }
+}

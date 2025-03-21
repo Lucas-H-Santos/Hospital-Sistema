@@ -1,0 +1,5 @@
+# Marcar arquivos JavaScript e JSX como a linguagem principal
+*.js linguist-language=JavaScript
+*.jsx linguist-language=JavaScript
+*.ts linguist-language=TypeScript
+*.tsx linguist-language=TypeScript

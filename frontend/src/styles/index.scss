@@ -1,0 +1,226 @@
+// Importações de Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// Variáveis personalizadas
+:root {
+  --primary-color: #0077b6;
+  --secondary-color: #00b4d8;
+  --accent-color: #0091ea;
+  --background-color: #f6f9fc;
+  --text-color: #333;
+  --light-grey: #e9ecef;
+  --white: #fff;
+  --border-radius: 8px;
+  --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+// Estilos globais
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  min-height: 100vh;
+  position: relative;
+}
+
+.main-content {
+  min-height: 80vh;
+  padding: 0 0 2rem 0;
+}
+
+// Estilos para elementos comuns
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 1rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  
+  &:hover {
+    color: darken(#0077b6, 10%);
+  }
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  
+  &:hover {
+    background-color: darken(#0077b6, 10%);
+    border-color: darken(#0077b6, 10%);
+  }
+  
+  &:focus {
+    box-shadow: 0 0 0 0.25rem rgba(0, 119, 182, 0.25);
+  }
+}
+
+// Header
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+// Cartões
+.card {
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  border: none;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(5px);
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  }
+}
+
+// Seção de herói para página inicial
+.hero-section {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../assets/hospital-hero.jpg') center/cover;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  color: white;
+  text-align: center;
+  margin-bottom: 2rem;
+  
+  h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+// Animações
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+// Formulários
+.form-control {
+  border-radius: 4px;
+  padding: 0.75rem;
+}
+
+// Ajustes responsivos
+@media (max-width: 768px) {
+  .hero-section {
+    height: 40vh;
+    
+    h1 {
+      font-size: 2rem;
+    }
+    
+    p {
+      font-size: 1rem;
+    }
+  }
+}
+
+// Estilos para notícias
+.news-detail-page {
+  .news-content {
+    h1 {
+      font-size: 2.2rem;
+    }
+    
+    .news-meta {
+      font-size: 0.9rem;
+      color: #666;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 1rem;
+    }
+    
+    .news-body {
+      line-height: 1.7;
+      
+      h3 {
+        margin-top: 1.75rem;
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+      }
+      
+      p {
+        margin-bottom: 1.25rem;
+      }
+      
+      ul, ol {
+        margin-bottom: 1.25rem;
+        padding-left: 1.5rem;
+      }
+      
+      img {
+        max-width: 100%;
+        height: auto;
+        margin: 1.5rem 0;
+        border-radius: var(--border-radius);
+      }
+    }
+  }
+  
+  .sidebar {
+    .related-news-item {
+      &:not(:last-child) {
+        padding-bottom: 0.75rem;
+        border-bottom: 1px solid #eee;
+      }
+      
+      h6 {
+        font-size: 0.95rem;
+        margin-bottom: 0.25rem;
+      }
+    }
+  }
+  
+  @media print {
+    .back-button, .sidebar, footer, header, .chat-bot-container {
+      display: none !important;
+    }
+    
+    .news-content {
+      box-shadow: none !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+  }
+}
+
+// Estilos para responsividade
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .news-detail-page {
+    .news-content {
+      h1 {
+        font-size: 1.8rem;
+      }
+    }
+  }
+}
