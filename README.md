@@ -59,7 +59,7 @@ Hospital Sistema é uma aplicação web completa desenvolvida para modernizar a 
 ### Instalação
 1. Clone o repositório:
 ```bash
-git clone https://github.com/seu-usuario/hospital-sistema.git
+git clone https://github.com/Lucas-H-Santos/hospital-sistema.git
 cd hospital-sistema
 ```
 
