@@ -4,13 +4,22 @@ const cors = require('cors');
 const helmet = require('helmet');
 const compression = require('compression');
 const morgan = require('morgan');
-const connectDB = require('./config/db');
+const mongoose = require('mongoose');
 
 // Carregar variáveis de ambiente
-dotenv.config();
+dotenv.config({ path: '../.env' }); // Adjust the path if necessary
 
-// Conectar ao banco de dados
-connectDB();
+// Fix mongoose strictQuery warning
+mongoose.set('strictQuery', false);
+
+// Use the environment variable for MongoDB connection
+mongoose.connect(process.env.MONGODB_URI)
+  .then(() => {
+    console.log('Conectado ao MongoDB com sucesso');
+  })
+  .catch(err => {
+    console.log('Erro ao conectar ao MongoDB:', err.message);
+  });
 
 const app = express();
 
