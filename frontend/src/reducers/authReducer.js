@@ -9,7 +9,6 @@ import {
 } from '../actions/types';
 
 const initialState = {
-  token: localStorage.getItem('token'),
   isAuthenticated: null,
   loading: true,
   user: null
@@ -28,10 +27,9 @@ export default function(state = initialState, action) {
       };
     case REGISTER_SUCCESS:
     case LOGIN_SUCCESS:
-      localStorage.setItem('token', payload.token);
+      // Token gerenciado via cookie HttpOnly no backend — não armazenar no localStorage
       return {
         ...state,
-        ...payload,
         isAuthenticated: true,
         loading: false
       };
@@ -39,10 +37,9 @@ export default function(state = initialState, action) {
     case AUTH_ERROR:
     case LOGIN_FAIL:
     case LOGOUT:
-      localStorage.removeItem('token');
+      // Nenhum dado sensível no localStorage para limpar
       return {
         ...state,
-        token: null,
         isAuthenticated: false,
         loading: false,
         user: null

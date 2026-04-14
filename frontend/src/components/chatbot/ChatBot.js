@@ -522,34 +522,32 @@ const ChatBot = () => {
   return (
     <>
       <div className={`chat-bot-container ${isOpen ? 'open' : ''}`}>
-        <div className="chat-bot-toggle" onClick={toggleChat}>
-          {isOpen ? 
-            <FaTimes size={20} /> : 
-            <FaComments size={20} />
-          }
-        </div>
-        
+
         {isOpen && (
           <Card className="chat-bot-card">
             <Card.Header className="chat-bot-header">
-              <h5 className="mb-0">Assistente do Hospital</h5>
+              <div className="chat-header-title">
+                <FaComments className="me-2" />
+                <h5 className="mb-0">Assistente do Hospital</h5>
+              </div>
               <div className="chat-controls">
-                <Button 
-                  variant="link" 
-                  className="text-white me-2 clear-btn" 
+                <button
+                  type="button"
+                  className="chat-new-btn"
                   title="Nova conversa"
                   onClick={handleClearHistory}
                 >
                   Nova conversa
-                </Button>
-                <Button 
-                  variant="link" 
-                  className="text-white close-btn" 
+                </button>
+                <button
+                  type="button"
+                  className="chat-close-btn"
                   onClick={toggleChat}
                   aria-label="Fechar chat"
+                  title="Fechar"
                 >
-                  <FaTimes />
-                </Button>
+                  <FaTimes size={16} />
+                </button>
               </div>
             </Card.Header>
             <Card.Body className="chat-bot-body">
@@ -615,6 +613,13 @@ const ChatBot = () => {
           </Card>
         )}
       </div>
+
+      {/* Botão flutuante — visível apenas quando o chat está fechado */}
+      {!isOpen && (
+        <div className="chat-bot-toggle" onClick={toggleChat} title="Abrir assistente virtual">
+          <FaComments size={22} />
+        </div>
+      )}
     </>
   );
 };

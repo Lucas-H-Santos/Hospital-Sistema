@@ -9,6 +9,7 @@ import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import BackgroundSVG from './components/layout/BackgroundSVG';
 import ChatBot from './components/chatbot/ChatBot';
+import CookieBanner from './components/layout/CookieBanner';
 
 // Pages
 import Home from './pages/Home';
@@ -71,6 +72,7 @@ const App = () => {
       </main>
       <Footer />
       <ChatBot />
+      <CookieBanner />
       <ToastContainer position="bottom-right" autoClose={5000} />
     </Router>
   );

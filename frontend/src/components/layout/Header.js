@@ -1,10 +1,13 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap';
-import { FaPhone, FaEnvelope, FaCalendarAlt, FaSignInAlt, FaUserPlus } from 'react-icons/fa';
+import { FaPhone, FaEnvelope, FaCalendarAlt, FaSignInAlt, FaUserPlus, FaMoon, FaSun } from 'react-icons/fa';
+import { useTheme } from '../../context/ThemeContext';
 import './Header.css';
 
 const Header = () => {
+  const { isDark, toggleTheme } = useTheme();
+
   return (
     <header>
       {/* Navbar principal */}
@@ -75,19 +78,28 @@ const Header = () => {
               <span>contato@hospital.com</span>
             </div>
           </div>
-          <div className="mt-2 mt-sm-0">
-            <Link to="/appointment" className="me-3 text-decoration-none">
+          <div className="mt-2 mt-sm-0 d-flex align-items-center gap-3">
+            <Link to="/appointment" className="me-2 text-decoration-none">
               <FaCalendarAlt className="me-1 text-primary" />
               <span>Agendar Consulta</span>
             </Link>
-            <Link to="/login" className="me-3 text-decoration-none">
+            <Link to="/login" className="me-2 text-decoration-none">
               <FaSignInAlt className="me-1 text-primary" />
               <span>Login</span>
             </Link>
-            <Link to="/register" className="text-decoration-none">
+            <Link to="/register" className="me-2 text-decoration-none">
               <FaUserPlus className="me-1 text-primary" />
               <span>Cadastre-se</span>
             </Link>
+            <button
+              className="theme-toggle-btn"
+              onClick={toggleTheme}
+              title={isDark ? 'Mudar para modo claro' : 'Mudar para modo escuro'}
+              aria-label={isDark ? 'Ativar modo claro' : 'Ativar modo escuro'}
+            >
+              {isDark ? <FaSun size={14} /> : <FaMoon size={14} />}
+              <span>{isDark ? 'Claro' : 'Escuro'}</span>
+            </button>
           </div>
         </Container>
       </div>

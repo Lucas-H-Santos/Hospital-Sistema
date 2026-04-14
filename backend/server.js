@@ -5,6 +5,7 @@ const helmet = require('helmet');
 const compression = require('compression');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
+const cookieParser = require('cookie-parser');
 
 // Carregar variáveis de ambiente
 dotenv.config({ path: '../.env' }); // Adjust the path if necessary
@@ -24,11 +25,21 @@ mongoose.connect(process.env.MONGODB_URI)
 const app = express();
 
 // Middleware
-app.use(express.json());
-app.use(cors());
+app.use(express.json({ limit: '10kb' })); // Limitar tamanho do body
+app.use(cookieParser());
+
+// CORS restrito à origem configurada
+const allowedOrigin = process.env.ALLOWED_ORIGIN || 'http://localhost:3000';
+app.use(cors({
+  origin: allowedOrigin,
+  credentials: true
+}));
+
 app.use(helmet());
 app.use(compression());
-app.use(morgan('dev'));
+
+// Morgan: 'combined' em produção para não expor dados sensíveis via 'dev'
+app.use(morgan(process.env.NODE_ENV === 'production' ? 'combined' : 'dev'));
 
 // Rotas
 app.use('/api/auth', require('./routes/auth'));

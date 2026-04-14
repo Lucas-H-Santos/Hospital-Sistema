@@ -5,14 +5,8 @@ const User = require('../models/User');
 exports.protect = async (req, res, next) => {
   let token;
 
-  if (
-    req.headers.authorization &&
-    req.headers.authorization.startsWith('Bearer')
-  ) {
-    // Extrair token do Bearer
-    token = req.headers.authorization.split(' ')[1];
-  } else if (req.cookies && req.cookies.token) {
-    // Extrair token do cookie
+  // Aceitar token apenas do cookie HttpOnly (não do Authorization header com localStorage)
+  if (req.cookies && req.cookies.token) {
     token = req.cookies.token;
   }
 
@@ -30,6 +24,13 @@ exports.protect = async (req, res, next) => {
 
     // Obter usuário pelo id
     req.user = await User.findById(decoded.id);
+
+    if (!req.user) {
+      return res.status(401).json({
+        success: false,
+        error: 'Não autorizado para acessar esta rota'
+      });
+    }
 
     next();
   } catch (err) {

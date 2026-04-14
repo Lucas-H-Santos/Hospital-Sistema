@@ -224,3 +224,308 @@ a {
     }
   }
 }
+
+// =============================================================
+// MODO ESCURO — Dark Mode
+// =============================================================
+[data-theme="dark"] {
+  --background-color: #0f1117;
+  --text-color: #dde2ee;
+  --light-grey: #1e2130;
+  --white: #161927;
+  --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+
+  background-color: #0f1117;
+  color: #dde2ee;
+
+  // ---- Body / Main ----
+  .main-content {
+    background-color: #0f1117;
+  }
+
+  // ---- Tipografia ----
+  h1, h2, h3, h4, h5, h6 {
+    color: #e8edf6;
+  }
+
+  p, li, address, label {
+    color: #b8c2d4;
+  }
+
+  .text-muted {
+    color: #7a8899 !important;
+  }
+
+  .text-secondary {
+    color: #7a8899 !important;
+  }
+
+  hr {
+    border-color: #252838;
+    opacity: 1;
+  }
+
+  // ---- Cards ----
+  .card {
+    background-color: #161927;
+    color: #dde2ee;
+    border: 1px solid #252838;
+
+    &:hover {
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  .card-header {
+    background-color: #1e2130;
+    border-bottom: 1px solid #252838;
+    color: #dde2ee;
+  }
+
+  .card-body {
+    color: #dde2ee;
+  }
+
+  .card-footer {
+    background-color: #1e2130;
+    border-top: 1px solid #252838;
+    color: #b8c2d4;
+  }
+
+  .card-title {
+    color: #e8edf6;
+  }
+
+  .card-text {
+    color: #b8c2d4;
+  }
+
+  // ---- Formulários ----
+  .form-control {
+    background-color: #1e2130;
+    border-color: #2e3244;
+    color: #dde2ee;
+
+    &:focus {
+      background-color: #252838;
+      border-color: #4db8e8;
+      color: #dde2ee;
+      box-shadow: 0 0 0 0.25rem rgba(77, 184, 232, 0.2);
+    }
+
+    &::placeholder {
+      color: #5a6575;
+    }
+  }
+
+  .form-select {
+    background-color: #1e2130;
+    border-color: #2e3244;
+    color: #dde2ee;
+
+    &:focus {
+      background-color: #252838;
+      border-color: #4db8e8;
+      color: #dde2ee;
+      box-shadow: 0 0 0 0.25rem rgba(77, 184, 232, 0.2);
+    }
+  }
+
+  .form-label {
+    color: #b8c2d4;
+  }
+
+  .form-check-input {
+    background-color: #1e2130;
+    border-color: #2e3244;
+  }
+
+  .input-group-text {
+    background-color: #1e2130;
+    border-color: #2e3244;
+    color: #b8c2d4;
+  }
+
+  // ---- Botões ----
+  .btn-outline-primary {
+    color: #4db8e8;
+    border-color: #4db8e8;
+
+    &:hover {
+      background-color: #4db8e8;
+      color: #0f1117;
+    }
+  }
+
+  .btn-outline-secondary {
+    color: #8899aa;
+    border-color: #3a3f50;
+
+    &:hover {
+      background-color: #3a3f50;
+      color: #dde2ee;
+    }
+  }
+
+  // ---- Tabelas ----
+  .table {
+    color: #dde2ee;
+    border-color: #252838;
+  }
+
+  .table > :not(caption) > * > * {
+    background-color: transparent;
+    color: #dde2ee;
+    border-bottom-color: #252838;
+  }
+
+  .table-striped > tbody > tr:nth-of-type(odd) > * {
+    background-color: #1a1d2a;
+    color: #dde2ee;
+  }
+
+  .table-hover > tbody > tr:hover > * {
+    background-color: #1e2130;
+    color: #dde2ee;
+  }
+
+  .table th {
+    color: #9aaabb;
+  }
+
+  // ---- Alertas ----
+  .alert-success {
+    background-color: #0d3320;
+    border-color: #0f4c2e;
+    color: #5dba88;
+  }
+
+  .alert-danger {
+    background-color: #3a0f0f;
+    border-color: #4d1616;
+    color: #e07070;
+  }
+
+  .alert-warning {
+    background-color: #38300a;
+    border-color: #4d420e;
+    color: #ffc857;
+  }
+
+  .alert-info {
+    background-color: #0b2233;
+    border-color: #0d2f44;
+    color: #5abfe0;
+  }
+
+  // ---- List Group ----
+  .list-group-item {
+    background-color: #161927;
+    border-color: #252838;
+    color: #dde2ee;
+  }
+
+  // ---- Nav Tabs ----
+  .nav-tabs {
+    border-bottom-color: #252838;
+
+    .nav-link {
+      color: #9aaabb;
+
+      &.active {
+        background-color: #161927;
+        border-color: #252838 #252838 #161927;
+        color: #4db8e8;
+      }
+
+      &:hover {
+        border-color: #252838;
+        color: #4db8e8;
+      }
+    }
+  }
+
+  // ---- Accordion (FAQ) ----
+  .accordion-item {
+    background-color: #161927;
+    border-color: #252838;
+  }
+
+  .accordion-button {
+    background-color: #1e2130;
+    color: #dde2ee;
+
+    &:not(.collapsed) {
+      background-color: #17223a;
+      color: #4db8e8;
+      box-shadow: inset 0 -1px 0 #252838;
+    }
+
+    &::after {
+      filter: invert(0.8);
+    }
+  }
+
+  .accordion-body {
+    background-color: #161927;
+    color: #c0c8d8;
+  }
+
+  // ---- Modal ----
+  .modal-content {
+    background-color: #161927;
+    border-color: #252838;
+  }
+
+  .modal-header {
+    border-bottom-color: #252838;
+    color: #dde2ee;
+  }
+
+  .modal-footer {
+    border-top-color: #252838;
+  }
+
+  // ---- Badge ----
+  .badge.bg-light {
+    background-color: #252838 !important;
+    color: #b8c2d4 !important;
+  }
+
+  // ---- Hero Section ----
+  .hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+      url('../assets/hospital-hero.jpg') center / cover;
+  }
+
+  // ---- Bootstrap bg utilities ----
+  .bg-light {
+    background-color: #1e2130 !important;
+    color: #dde2ee;
+  }
+
+  .bg-white {
+    background-color: #161927 !important;
+  }
+
+  // ---- News / Blog ----
+  .news-meta {
+    color: #7a8899 !important;
+    border-bottom-color: #252838 !important;
+  }
+
+  .sidebar .related-news-item:not(:last-child) {
+    border-bottom-color: #252838 !important;
+  }
+
+  // ---- Separadores ----
+  .dropdown-divider {
+    border-top-color: #252838;
+  }
+
+  // ---- Footer ----
+  footer.bg-primary {
+    background-color: #07131e !important;
+  }
+}
+

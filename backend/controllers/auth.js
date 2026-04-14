@@ -13,7 +13,7 @@ exports.register = async (req, res, next) => {
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const { name, email, password, role } = req.body;
+    const { name, email, password } = req.body;
 
     // Verificar se o usuário já existe
     let user = await User.findOne({ email });
@@ -25,12 +25,13 @@ exports.register = async (req, res, next) => {
       });
     }
 
-    // Criar usuário
+    // Criar usuário — role sempre 'paciente' no auto-cadastro (nunca aceitar do body)
     user = await User.create({
       name,
       email,
       password,
-      role: role || 'paciente'
+      role: 'paciente',
+      consentAt: new Date() // LGPD Art. 8° — registrar data/hora do consentimento
     });
 
     sendTokenResponse(user, 201, res);
@@ -127,10 +128,9 @@ exports.forgotPassword = async (req, res, next) => {
 
     await user.save({ validateBeforeSave: false });
 
-    // Criar URL de redefinição
-    const resetUrl = `${req.protocol}://${req.get(
-      'host'
-    )}/api/auth/resetpassword/${resetToken}`;
+    // Criar URL de redefinição — usar FRONTEND_URL para evitar Host Header Injection
+    const frontendUrl = process.env.FRONTEND_URL || 'http://localhost:3000';
+    const resetUrl = `${frontendUrl}/reset-password/${resetToken}`;
 
     const message = `Você solicitou a redefinição de senha. Acesse: ${resetUrl}`;
 
@@ -208,18 +208,19 @@ const sendTokenResponse = (user, statusCode, res) => {
     expires: new Date(
       Date.now() + process.env.JWT_COOKIE_EXPIRE * 24 * 60 * 60 * 1000
     ),
-    httpOnly: true
+    httpOnly: true,  // Impede acesso via JavaScript (proteção XSS)
+    sameSite: 'strict' // Proteção CSRF
   };
 
   if (process.env.NODE_ENV === 'production') {
-    options.secure = true;
+    options.secure = true; // HTTPS apenas em produção
   }
 
+  // Não retornar o token no body — usar apenas o cookie HttpOnly
   res
     .status(statusCode)
     .cookie('token', token, options)
     .json({
-      success: true,
-      token
+      success: true
     });
 };

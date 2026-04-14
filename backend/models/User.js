@@ -26,7 +26,7 @@ const UserSchema = new mongoose.Schema({
   password: {
     type: String,
     required: [true, 'Por favor, forneça uma senha'],
-    minlength: 6,
+    minlength: 10,
     select: false // Não retornar a senha nas consultas
   },
   phone: {
@@ -48,6 +48,11 @@ const UserSchema = new mongoose.Schema({
     enum: ['masculino', 'feminino', 'outro']
   },
   createdAt: {
+    type: Date,
+    default: Date.now
+  },
+  // LGPD Art. 8° — registro do consentimento do titular
+  consentAt: {
     type: Date,
     default: Date.now
   },

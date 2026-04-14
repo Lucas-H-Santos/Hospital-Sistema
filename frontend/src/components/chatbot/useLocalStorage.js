@@ -1,13 +1,11 @@
 import { useState, useEffect } from 'react';
 
-// Hook personalizado para persistir o histórico de chat no localStorage
+// Hook personalizado para persistir o histórico do chat na sessão (não persistente entre abas/fechamentos)
+// Usa sessionStorage em vez de localStorage para evitar persistência de dados de saúde (LGPD)
 const useLocalStorage = (key, initialValue) => {
-  // Estado para armazenar o valor
   const [value, setValue] = useState(() => {
     try {
-      // Obter do localStorage
-      const item = window.localStorage.getItem(key);
-      // Analisar o item armazenado ou retornar initialValue
+      const item = window.sessionStorage.getItem(key);
       return item ? JSON.parse(item) : initialValue;
     } catch (error) {
       console.error(error);
@@ -15,11 +13,9 @@ const useLocalStorage = (key, initialValue) => {
     }
   });
 
-  // Atualizar localStorage quando o estado muda
   useEffect(() => {
     try {
-      // Salvar state no localStorage
-      window.localStorage.setItem(key, JSON.stringify(value));
+      window.sessionStorage.setItem(key, JSON.stringify(value));
     } catch (error) {
       console.error(error);
     }

@@ -151,3 +151,110 @@
     margin-bottom: 0.5rem;
   }
 }
+
+/* =============================================
+   BOTÃO DE ALTERNÂNCIA DE TEMA
+   ============================================= */
+.theme-toggle-btn {
+  background: none;
+  border: 1px solid #dee2e6;
+  border-radius: 20px;
+  padding: 5px 12px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #495057;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.theme-toggle-btn:hover {
+  background-color: #e9ecef;
+  border-color: #0077b6;
+  color: #0077b6;
+}
+
+/* =============================================
+   DARK MODE — HEADER
+   ============================================= */
+[data-theme="dark"] .main-navbar {
+  background-color: #161927 !important;
+  border-bottom: 1px solid #252838;
+}
+
+[data-theme="dark"] .contact-bar {
+  background-color: #0f1117;
+  border-bottom: 1px solid #252838;
+}
+
+[data-theme="dark"] .contact-bar a,
+[data-theme="dark"] .contact-bar span {
+  color: #a0aabb;
+}
+
+[data-theme="dark"] .contact-bar a:hover {
+  color: #4db8e8;
+}
+
+[data-theme="dark"] .hospital-name {
+  color: #4db8e8;
+}
+
+[data-theme="dark"] .tagline {
+  color: #7a8899;
+}
+
+[data-theme="dark"] .navbar-nav .nav-link {
+  color: #c8d0df !important;
+}
+
+[data-theme="dark"] .navbar-nav .nav-link:hover {
+  color: #4db8e8 !important;
+}
+
+[data-theme="dark"] .navbar-toggler {
+  border-color: #4db8e8;
+}
+
+[data-theme="dark"] .navbar-toggler-icon {
+  filter: invert(1) brightness(2);
+}
+
+[data-theme="dark"] .dropdown-menu {
+  background-color: #1e2130;
+  border: 1px solid #252838;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .dropdown-item {
+  color: #c8d0df;
+}
+
+[data-theme="dark"] .dropdown-item:hover,
+[data-theme="dark"] .dropdown-item:focus {
+  background-color: rgba(77, 184, 232, 0.12);
+  color: #4db8e8;
+}
+
+[data-theme="dark"] .dropdown-item.active {
+  background-color: #0077b6;
+  color: #fff;
+}
+
+[data-theme="dark"] .navbar-nav .nav-link::after {
+  background-color: #4db8e8;
+}
+
+[data-theme="dark"] .theme-toggle-btn {
+  border-color: #3a3f50;
+  color: #a0aabb;
+}
+
+[data-theme="dark"] .theme-toggle-btn:hover {
+  background-color: #252838;
+  border-color: #4db8e8;
+  color: #4db8e8;
+}
